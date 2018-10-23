@@ -1,10 +1,10 @@
 package com.kainos.tdp.employeemanager;
 public class Employee {
 	
-	private String name, address, nationalInsuranceNo, IBAN;
+	private String name, address, nationalInsuranceNo, IBAN, department;
 	private float startingSalary;
 	
-	public Employee(String name, String address, String nationalInsuranceNo, String IBAN, float startingSalary) {
+	public Employee(String name, String address, String nationalInsuranceNo, String IBAN, float startingSalary, String department) {
 		setName(name);
 		setAddress(address);
 		setNationalInsuranceNo(nationalInsuranceNo);
@@ -58,11 +58,21 @@ public class Employee {
 				+ "\nAddress: %s"
 				+ "\nNational Insurance Number: %s"
 				+ "\nBank Account Number: %s"
-				+ "\nStarting Salary: £%.f", 
+				+ "\nStarting Salary: £%.f"
+				+ "\nDepartment: %s", 
 				this.getName(),
 				this.getAddress(),
 				this.getNationalInsuranceNo(),
 				this.getIBAN(),
-				this.getStartingSalary());
+				this.getStartingSalary(),
+				this.getDepartment());
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 }
