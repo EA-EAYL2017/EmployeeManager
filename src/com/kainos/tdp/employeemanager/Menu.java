@@ -28,8 +28,14 @@ public class Menu {
 		String address = inputAddress();
 		String niNumber = inputNINumber();
 		String IBAN = inputIBAN();
-		String employeeNo = inputEmployeeNo();
 		float startingSalary = inputStartingSalary();
+		
+		Employee emp = new Employee(name, address, niNumber, IBAN, startingSalary);
+		//TODO : ADD "ARE YOU SURE" SCREEN
+		
+		DBConnection db = new DBConnection();
+		db.createUser(emp);
+		
 	}
 
 	private String inputName() {
