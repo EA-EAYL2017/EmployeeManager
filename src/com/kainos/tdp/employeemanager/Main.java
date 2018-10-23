@@ -20,9 +20,12 @@ public class Main {
 		} while(!validChoice);
 		
 		switch (userInput) {
-			case 1 : menu.addEmployee();
-					 break;
-			case 2 : menu.viewEmployee();
+			case 1 : 
+				menu.addEmployee();
+				break;
+			case 2 : 
+				menu.viewEmployee();
+				break;
 		}
 	}
 
