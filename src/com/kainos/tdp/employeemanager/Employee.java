@@ -1,11 +1,10 @@
 package com.kainos.tdp.employeemanager;
 public class Employee {
 	
-	private String employeeNumber, name, address, nationalInsuranceNo, IBAN;
+	private String name, address, nationalInsuranceNo, IBAN;
 	private float startingSalary;
 	
-	public Employee(String employeeNumber, String name, String address, String nationalInsuranceNo, String IBAN, float startingSalary) {
-		setEmployeeNumber(employeeNumber);
+	public Employee(String name, String address, String nationalInsuranceNo, String IBAN, float startingSalary) {
 		setName(name);
 		setAddress(address);
 		setNationalInsuranceNo(nationalInsuranceNo);
@@ -13,51 +12,57 @@ public class Employee {
 		setStartingSalary(startingSalary);
 	}
 
-	private String getEmployeeNumber() {
-		return employeeNumber;
-	}
-
-	private void setEmployeeNumber(String employeeNumber) {
-		this.employeeNumber = employeeNumber;
-	}
-
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 
-	private void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	private String getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
-	private void setAddress(String address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
-	private String getNationalInsuranceNo() {
+	public String getNationalInsuranceNo() {
 		return nationalInsuranceNo;
 	}
 
-	private void setNationalInsuranceNo(String nationalInsuranceNo) {
+	public void setNationalInsuranceNo(String nationalInsuranceNo) {
 		this.nationalInsuranceNo = nationalInsuranceNo;
 	}
 
-	private String getIBAN() {
+	public String getIBAN() {
 		return IBAN;
 	}
 
-	private void setIBAN(String iBAN) {
+	public void setIBAN(String iBAN) {
 		IBAN = iBAN;
 	}
 
-	private float getStartingSalary() {
+	public float getStartingSalary() {
 		return startingSalary;
 	}
 
-	private void setStartingSalary(float startingSalary) {
+	public void setStartingSalary(float startingSalary) {
 		this.startingSalary = startingSalary;
+	}
+	
+	@Override 
+	public String toString() {
+	return	String.format("Name: %s "
+				+ "\nAddress: %s"
+				+ "\nNational Insurance Number: %s"
+				+ "\nBank Account Number: %s"
+				+ "\nStarting Salary: £%.f", 
+				this.getName(),
+				this.getAddress(),
+				this.getNationalInsuranceNo(),
+				this.getIBAN(),
+				this.getStartingSalary());
 	}
 }
