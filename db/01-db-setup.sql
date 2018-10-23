@@ -1,5 +1,5 @@
-set @username := 'employee_manager';
-set @password := 'password';
+-- set @username := 'employee_manager';
+-- set @password := 'password';
 
 -- make sure the running user has these permissions (to allow granting)
 -- GRANT ALL PRIVILEGES ON *.* TO '<user name>'@'localhost' WITH GRANT OPTION;
