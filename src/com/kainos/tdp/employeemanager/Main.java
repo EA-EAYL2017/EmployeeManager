@@ -12,20 +12,21 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		Menu menu = new Menu();
 		boolean validChoice;
-		
-		do {
-			menu.printMenu();
-			userInput = sc.nextInt();
-			validChoice = menu.checkUserChoiceValid(userInput);
-		} while(!validChoice);
-		
-		switch (userInput) {
-			case 1 : 
-				menu.addEmployee();
-				break;
-			case 2 : 
-				menu.viewEmployee();
-				break;
+		while(true){
+			do {
+				menu.printMenu();
+				userInput = sc.nextInt();
+				validChoice = menu.checkUserChoiceValid(userInput);
+			} while(!validChoice);
+			
+			switch (userInput) {
+				case 1 : 
+					menu.addEmployee();
+					break;
+				case 2 : 
+					menu.viewEmployee();
+					break;
+			}
 		}
 	}
 }
