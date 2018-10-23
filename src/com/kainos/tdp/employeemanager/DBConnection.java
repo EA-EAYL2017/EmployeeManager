@@ -45,7 +45,7 @@ public class DBConnection {
 			
 			ResultSet userInfo = search.executeQuery(statement);
 			
-			return new Employee(userInfo.getString("name"), userInfo.getString("address"), userInfo.getString("national_insurance"), userInfo.getString("bic_iban"), userInfo.getFloat("salary"), userInfo.getFloat("department"));
+			return new Employee(userInfo.getString("name"), userInfo.getString("address"), userInfo.getString("national_insurance"), userInfo.getString("bic_iban"), userInfo.getFloat("salary"), userInfo.getString("department"));
 		} catch(SQLException e) {
 			System.out.println(e.getMessage());
 			return null;
