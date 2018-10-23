@@ -1,6 +1,8 @@
 package com.kainos.tdp.employeemanager;
+import java.util.Scanner;
 
 public class Menu {
+	public Scanner sc = new Scanner(System.in);
 	
 	public void printMenu() {
 		System.out.println("******************************");
@@ -19,5 +21,49 @@ public class Menu {
 		} else {
 			return true;
 		}
+	}
+	
+	public void addEmployee() {
+		String name = inputName();
+		String address = inputAddress();
+		String niNumber = inputNINumber();
+		String IBAN = inputIBAN();
+		float startingSalary = inputStartingSalary();
+		
+		Employee emp = new Employee(name, address, niNumber, IBAN, startingSalary);
+		//TODO : ADD "ARE YOU SURE" SCREEN
+		
+		DBConnection db = new DBConnection();
+		db.createUser(emp);
+	}
+
+	private String inputName() {
+		System.out.println("\nPlease Enter Employee Name : ");
+		return sc.nextLine();
+	}
+
+	private String inputAddress() {
+		System.out.println("\nPlease Enter Address : ");
+		return sc.nextLine();
+	}
+
+	private String inputNINumber() {
+		System.out.println("\nPlease Enter NI Number : ");
+		return sc.nextLine();
+	}
+	
+	private String inputIBAN() {
+		System.out.println("\nPlease Enter IBAN : ");
+		return sc.nextLine();
+	}
+	
+	private String inputEmployeeNo() {
+		System.out.println("\nPlease Enter Employee Number : ");
+		return sc.nextLine();
+	}
+	
+	private float inputStartingSalary() {
+		System.out.println("\nPlease Enter Starting Salary : ");
+		return sc.nextFloat();
 	}
 }

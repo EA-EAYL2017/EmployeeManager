@@ -18,8 +18,14 @@ public class Main {
 			userInput = sc.nextInt();
 			validChoice = menu.checkUserChoiceValid(userInput);
 		} while(!validChoice);
+		
+		switch (userInput) {
+			case 1 : 
+				menu.addEmployee();
+				break;
+			case 2 : 
+				menu.viewEmployee();
+				break;
+		}
 	}
-
-	
-	
 }
