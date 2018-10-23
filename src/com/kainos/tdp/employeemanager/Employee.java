@@ -10,6 +10,7 @@ public class Employee {
 		setNationalInsuranceNo(nationalInsuranceNo);
 		setIBAN(IBAN);
 		setStartingSalary(startingSalary);
+		setDepartment(department);
 	}
 
 	public String getName() {

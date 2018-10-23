@@ -119,7 +119,7 @@ public class Menu {
 		return valid;
 	}
 	
-	private void departmentSearch() {
+	public void departmentSearch() {
 		System.out.println("Please Enter The Department To Search For : ");
 		String department = sc.nextLine();
 		DBConnection db = new DBConnection();
