@@ -12,7 +12,7 @@ public class Menu {
 		System.out.println("******************************");
 	}
 	
-	public boolean handleUserChoice(int userInput) {
+	public boolean checkUserChoiceValid(int userInput) {
 		if(userInput < 1 || userInput > 2) {
 			System.out.println("Invalid choice, please pick again!");
 			return false;

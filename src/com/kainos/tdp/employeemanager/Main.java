@@ -16,18 +16,10 @@ public class Main {
 		do {
 			menu.printMenu();
 			userInput = sc.nextInt();
-			validChoice = handleUserChoice(userInput);
-		}while(!validChoice);
+			validChoice = menu.checkUserChoiceValid(userInput);
+		} while(!validChoice);
 	}
 
-	private static boolean handleUserChoice(int userInput) {
-		if(userInput < 1 || userInput > 2) {
-			System.out.println("Invalid choice, please pick again!");
-			return false;
-		} else {
-			return true;
-		}
-	}
 	
 	
 }
