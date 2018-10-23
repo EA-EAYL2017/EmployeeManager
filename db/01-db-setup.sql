@@ -22,9 +22,8 @@ EXECUTE stmt;
 DEALLOCATE PREPARE stmt;
 
 SET @query1 = CONCAT(
-	'GRANT USAGE ON *.* TO "',@username,'"@"localhost" IDENTIFIED BY "',@password,
-    '" WITH MAX_QUERIES_PER_HOUR 120 MAX_CONNECTIONS_PER_HOUR 60 MAX_UPDATES_PER_HOUR',
-    ' 60 MAX_USER_CONNECTIONS 2'
+	'GRANT SELECT,INSERT ON EmployeeManager.* TO "',@username,
+    '"@"localhost" IDENTIFIED BY "',@password,'"'
 );
 PREPARE stmt FROM @query1;
 EXECUTE stmt;
