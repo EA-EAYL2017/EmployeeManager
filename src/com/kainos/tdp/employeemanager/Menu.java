@@ -37,6 +37,12 @@ public class Menu {
 		if(valid) {
 			DBConnection db = new DBConnection();
 			db.createUser(emp);
+		} else {
+			emp.setName(inputName());
+			emp.setAddress(inputAddress());
+			emp.setNationalInsuranceNo(inputNINumber());
+			emp.setIBAN(inputIBAN());
+			emp.setStartingSalary(inputStartingSalary());
 		}
 	}
 
