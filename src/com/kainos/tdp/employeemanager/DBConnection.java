@@ -26,7 +26,7 @@ public class DBConnection {
 		try {
 			Statement createStatement = currentConnection.createStatement();
 			
-			String statement = String.format("INSERT INTO Employees (name, address, national_insurance, bic_iban, salary, department) VALUES ('%s', '%s', '%s', '%s', '%.2f, '%s'');" , user.getName(), user.getAddress(), user.getNationalInsuranceNo(), user.getIBAN(), user.getStartingSalary(), user.getDepartment());
+			String statement = String.format("INSERT INTO Employees (name, address, national_insurance, bic_iban, salary, department) VALUES ('%s', '%s', '%s', '%s', '%.2f', '%s');" , user.getName(), user.getAddress(), user.getNationalInsuranceNo(), user.getIBAN(), user.getStartingSalary(), user.getDepartment());
 			createStatement.execute(statement);
 		} catch(SQLException e) {
 			System.out.println(e.getMessage());
