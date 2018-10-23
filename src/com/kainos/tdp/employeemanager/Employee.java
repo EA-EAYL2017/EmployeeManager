@@ -58,7 +58,7 @@ public class Employee {
 				+ "\nAddress: %s"
 				+ "\nNational Insurance Number: %s"
 				+ "\nBank Account Number: %s"
-				+ "\nStarting Salary: £%.f"
+				+ "\nStarting Salary: £%.2f"
 				+ "\nDepartment: %s", 
 				this.getName(),
 				this.getAddress(),
