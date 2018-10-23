@@ -21,7 +21,7 @@ public class Menu {
 			return false;
 		} else if(userInput == 3) {
 			System.exit(0);
-		}else {
+		} else {
 			return true;
 		}
 		return false;
@@ -81,11 +81,6 @@ public class Menu {
 		return sc.nextLine();
 	}
 	
-	private String inputEmployeeNo() {
-		System.out.println("\nPlease Enter Employee Number : ");
-		return sc.nextLine();
-	}
-	
 	private float inputStartingSalary() {
 		System.out.println("\nPlease Enter Starting Salary : ");
 		return sc.nextFloat();
@@ -105,7 +100,7 @@ public class Menu {
 				default:
 					System.out.println("Sorry I didn't get that, please try again.");
 			}
-		}while(!valid);
+		} while(!valid);
 		return valid;
 	}
 }
