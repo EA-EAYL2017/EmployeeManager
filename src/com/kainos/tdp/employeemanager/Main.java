@@ -28,6 +28,7 @@ public class Main {
 					break;
 				case 3 :
 					menu.departmentSearch();
+					break;
 			}
 		}
 	}

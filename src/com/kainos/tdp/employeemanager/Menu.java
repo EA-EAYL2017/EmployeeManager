@@ -1,4 +1,5 @@
 package com.kainos.tdp.employeemanager;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -116,7 +117,7 @@ public class Menu {
 		System.out.println("Please Enter The Department To Search For : ");
 		String department = sc.nextLine();
 		DBConnection db = new DBConnection();
-		Employee[] empArray = db.departmentReport(department);
+		ArrayList<Employee> empArray = db.departmentReport(department);
 		for(Employee emp : empArray) {
 			System.out.println(emp);
 		}
