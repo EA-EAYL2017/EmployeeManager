@@ -1,4 +1,4 @@
-package com.kainos.tdp.employeemanager;
+package com.kainos.tdp.employeemanager.Test;
 
 import com.kainos.tdp.employeemanager.*;
 
