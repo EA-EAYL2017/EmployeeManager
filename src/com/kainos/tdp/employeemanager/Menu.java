@@ -35,7 +35,6 @@ public class Menu {
 		
 		DBConnection db = new DBConnection();
 		db.createUser(emp);
-		
 	}
 
 	private String inputName() {
@@ -67,5 +66,4 @@ public class Menu {
 		System.out.println("\nPlease Enter Starting Salary : ");
 		return sc.nextFloat();
 	}
-	
 }
