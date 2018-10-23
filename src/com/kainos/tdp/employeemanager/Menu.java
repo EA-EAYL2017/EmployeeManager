@@ -11,16 +11,20 @@ public class Menu {
 		System.out.println("           System             \n");
 		System.out.println(" 1. Insert a New Employee     \n");
 		System.out.println(" 2. View Employee Details     \n");
+		System.out.println(" 3. Exit System               \n");
 		System.out.println("******************************");
 	}
 	
 	public boolean checkUserChoiceValid(int userInput) {
-		if(userInput < 1 || userInput > 2) {
+		if(userInput < 1 || userInput > 3) {
 			System.out.println("Invalid choice, please pick again!");
 			return false;
-		} else {
+		} else if(userInput == 3) {
+			System.exit(0);
+		}else {
 			return true;
 		}
+		return false;
 	}
 	
 	public void addEmployee() {
@@ -43,6 +47,17 @@ public class Menu {
 			emp.setNationalInsuranceNo(inputNINumber());
 			emp.setIBAN(inputIBAN());
 			emp.setStartingSalary(inputStartingSalary());
+		}
+	}
+	
+	public void viewEmployee() {
+		System.out.println("Enter the Employee ID : ");
+		int id = sc.nextInt();
+		if(id > 0) {
+			DBConnection db = new DBConnection();
+			db.searchById(id);
+		} else {
+			System.out.println("User ID Must Be Positive");
 		}
 	}
 
