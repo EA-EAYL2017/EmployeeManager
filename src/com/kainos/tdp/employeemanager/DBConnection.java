@@ -18,7 +18,7 @@ public class DBConnection {
 		}
 	}
 	
-	public void createUser(String name, String address, String nin, String bank, float startingSalary, String empNumber) {
+	public void createUser(Employee user) {
 		Connection currentConnection = createConnection();
 		if(currentConnection == null) {
 			System.out.println("Unexpected error on Database connection");
@@ -26,10 +26,12 @@ public class DBConnection {
 		try {
 			Statement createStatement = currentConnection.createStatement();
 			
-			String statement = String.format("INSERT INTO Employees, VALUES ('" + "%s', '" + "%s', '" + "%s', '" + "%s', '%.2f', '" + "%s');" , name, address, nin, bank, startingSalary, empNumber);
+			String statement = String.format("INSERT INTO Employees, VALUES ('" + "%s', '" + "%s', '" + "%s', '" + "%s', '%.2f);'" , user.getName(), user.getAddress(), user.getNationalInsuranceNo(), user.getIBAN(), user.getStartingSalary());
 			createStatement.execute(statement);
 		} catch(SQLException e) {
-			System.out.println(e);
+			System.out.println(e.getMessage());
 		}
 	}
+	
+	
 }
