@@ -14,7 +14,10 @@ public class Main {
 		System.out.println("******************************");
 		System.out.println("       Welcome to the         ");
 		System.out.println("     Employee Management      ");
-		System.out.println("           System             ");
+		System.out.println("           System             \n");
+		System.out.println(" 1. Insert a New Employee     \n");
+		System.out.println(" 2. View Employee Details     \n");
 		System.out.println("******************************");
+		
 	}
 }
