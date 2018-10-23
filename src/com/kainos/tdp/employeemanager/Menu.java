@@ -11,15 +11,16 @@ public class Menu {
 		System.out.println("           System             \n");
 		System.out.println(" 1. Insert a New Employee     \n");
 		System.out.println(" 2. View Employee Details     \n");
-		System.out.println(" 3. Exit System               \n");
+		System.out.println(" 3. View Department Employees \n");
+		System.out.println(" 4. Exit System               \n");
 		System.out.println("******************************");
 	}
 	
 	public boolean checkUserChoiceValid(int userInput) {
-		if(userInput < 1 || userInput > 3) {
+		if(userInput < 1 || userInput > 4) {
 			System.out.println("Invalid choice, please pick again!");
 			return false;
-		} else if(userInput == 3) {
+		} else if(userInput == 4) {
 			System.exit(0);
 		} else {
 			return true;
@@ -33,6 +34,7 @@ public class Menu {
 		String niNumber = inputNINumber();
 		String IBAN = inputIBAN();
 		float startingSalary = inputStartingSalary();
+		String department = inputDepartment();
 		
 		Employee emp = new Employee(name, address, niNumber, IBAN, startingSalary);
 		
@@ -47,6 +49,7 @@ public class Menu {
 			emp.setNationalInsuranceNo(inputNINumber());
 			emp.setIBAN(inputIBAN());
 			emp.setStartingSalary(inputStartingSalary());
+			emp.setDepartment(inputDepartment());
 		}
 	}
 	
@@ -86,6 +89,11 @@ public class Menu {
 		return sc.nextFloat();
 	}
 	
+	private String inputDepartment() {
+		System.out.println("\nPlease Enter Department :");
+		return sc.nextLine();
+	}
+	
 	private boolean verifyDetails(Employee emp) {
 		emp.toString();
 		System.out.println("\nAre these details correct? (Yes/No)");
@@ -102,5 +110,15 @@ public class Menu {
 			}
 		} while(!valid);
 		return valid;
+	}
+	
+	private void departmentSearch() {
+		System.out.println("Please Enter The Department To Search For : ");
+		String department = sc.nextLine();
+		DBConnection db = new DBConnection();
+		Employee[] empArray = db.departmentReport(department);
+		for(Employee emp : empArray) {
+			System.out.println(emp);
+		}
 	}
 }
