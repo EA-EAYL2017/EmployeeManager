@@ -60,7 +60,7 @@ public class DBConnection {
 		try {
 			Statement search = currentConnection.createStatement();
 			
-			String statement = String.format("SELECT * FROM Employees WHERE department = %s", department);
+			String statement = String.format("SELECT * FROM Employees WHERE department = '%s'", department);
 			
 			ResultSet results = search.executeQuery(statement);
 			ArrayList<Employee> reportResults = new ArrayList<Employee>();
