@@ -10,14 +10,15 @@ public class Main {
 	private static void runMenu() {
 		int userInput;
 		Scanner sc = new Scanner(System.in);
+		Menu menu = new Menu();
+		boolean validChoice;
 		
-		System.out.println("******************************");
-		System.out.println("       Welcome to the         ");
-		System.out.println("     Employee Management      ");
-		System.out.println("           System             \n");
-		System.out.println(" 1. Insert a New Employee     \n");
-		System.out.println(" 2. View Employee Details     \n");
-		System.out.println("******************************");
-		
+		do {
+			menu.printMenu();
+			userInput = sc.nextInt();
+			handleUserChoice(userInput);
+		}while(!validChoice);
 	}
+	
+	
 }
