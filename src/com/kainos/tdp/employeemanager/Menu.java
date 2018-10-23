@@ -55,7 +55,8 @@ public class Menu {
 		int id = sc.nextInt();
 		if(id > 0) {
 			DBConnection db = new DBConnection();
-			db.searchById(id);
+			Employee emp = db.searchById(id);
+			System.out.println(emp);
 		} else {
 			System.out.println("User ID Must Be Positive");
 		}
@@ -83,20 +84,25 @@ public class Menu {
 	
 	private float inputStartingSalary() {
 		System.out.println("\nPlease Enter Starting Salary : ");
-		return sc.nextFloat();
+		float input = sc.nextFloat();
+		sc.nextLine();
+		return input;
 	}
 	
 	private boolean verifyDetails(Employee emp) {
-		emp.toString();
+		System.out.println(emp);
 		System.out.println("\nAre these details correct? (Yes/No)");
-		String correct = sc.nextLine();
 		boolean valid = false;
 		do {
+			String correct = sc.nextLine();
+			System.out.println(correct);
 			switch (correct.toLowerCase()) {
 				case "yes":
-					return true;
+					valid = true;
+					break;
 				case "no":
-					return false;
+					valid = false;
+					break;
 				default:
 					System.out.println("Sorry I didn't get that, please try again.");
 			}
