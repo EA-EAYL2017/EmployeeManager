@@ -37,7 +37,7 @@ public class Menu {
 		float startingSalary = inputStartingSalary();
 		String department = inputDepartment();
 		
-		Employee emp = new Employee(name, address, niNumber, IBAN, startingSalary);
+		Employee emp = new Employee(name, address, niNumber, IBAN, startingSalary, department);
 		
 		boolean valid = verifyDetails(emp);
 		
