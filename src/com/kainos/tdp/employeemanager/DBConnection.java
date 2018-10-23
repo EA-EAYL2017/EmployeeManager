@@ -50,8 +50,5 @@ public class DBConnection {
 			System.out.println(e.getMessage());
 			return null;
 		}
-		
 	}
-	
-	
 }
