@@ -31,10 +31,13 @@ public class Menu {
 		float startingSalary = inputStartingSalary();
 		
 		Employee emp = new Employee(name, address, niNumber, IBAN, startingSalary);
-		//TODO : ADD "ARE YOU SURE" SCREEN
 		
-		DBConnection db = new DBConnection();
-		db.createUser(emp);
+		boolean valid = verifyDetails(emp);
+		
+		if(valid) {
+			DBConnection db = new DBConnection();
+			db.createUser(emp);
+		}
 	}
 
 	private String inputName() {
@@ -65,5 +68,23 @@ public class Menu {
 	private float inputStartingSalary() {
 		System.out.println("\nPlease Enter Starting Salary : ");
 		return sc.nextFloat();
+	}
+	
+	private boolean verifyDetails(Employee emp) {
+		emp.toString();
+		System.out.println("\nAre these details correct? (Yes/No)");
+		String correct = sc.nextLine();
+		boolean valid = false;
+		do {
+			switch (correct.toLowerCase()) {
+				case "yes":
+					return true;
+				case "no":
+					return false;
+				default:
+					System.out.println("Sorry I didn't get that, please try again.");
+			}
+		}while(!valid);
+		return valid;
 	}
 }
