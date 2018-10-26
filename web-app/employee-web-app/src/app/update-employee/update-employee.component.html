@@ -21,6 +21,7 @@
           <option value="Smart">Smart</option>
         </select>
     </div>
-    <div *ngIf="updateForm.hasError('required', 'department')">Department name is required</div>    <input type="Submit" [disabled]="!updateForm.valid" class="btn btn-primary">
+    <div *ngIf="updateForm.hasError('required', 'department')">Department name is required</div> 
+    <input type="Submit" [disabled]="!updateForm.valid" class="btn btn-primary">
   </fieldset>
 </form>
