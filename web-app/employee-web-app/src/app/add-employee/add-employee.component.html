@@ -6,7 +6,14 @@
     <div><input class="form-control" [(ngModel)]="newEmployee.national_insurance" name="national_insurance" placeholder="National Insurance" required></div>
     <div><input class="form-control" [(ngModel)]="newEmployee.bic_iban" name="bic_iban" placeholder="IBAN" required></div>
     <div><input class="form-control" [(ngModel)]="newEmployee.salary" type="number" name="salary" placeholder="Salary" required></div>
-    <div><input class="form-control" [(ngModel)]="newEmployee.department" name="department" placeholder="Department" required></div>
+    <div>
+      <select [(ngModel)]="newEmployee.department" name="department" class="form-control">
+        <option value="Applied Innovation">Applied Innovation</option>
+        <option value="Evolve">Evolve</option>
+        <option value="Digital Services">Digital Services</option>
+        <option value="Smart">Smart</option>
+      </select>
+    </div>
     <input class="btn btn-primary" type="Submit" [disabled]="!addForm.valid">
   </fieldset>
 </form>
