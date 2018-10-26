@@ -9,7 +9,6 @@ import { SwitchboardService } from '../switchboard.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
   ngOnInit() {
   }
   switchboard: SwitchboardService;
