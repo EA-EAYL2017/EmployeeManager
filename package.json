@@ -1,0 +1,24 @@
+{
+  "name": "employeemanager",
+  "version": "1.0.0",
+  "description": "Used to manage the users in an organisation.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterjgordon/EmployeeManager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterjgordon/EmployeeManager/issues"
+  },
+  "homepage": "https://github.com/peterjgordon/EmployeeManager#readme"
+}

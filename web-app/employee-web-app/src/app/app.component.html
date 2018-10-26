@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">
+  <ngb-tabset #tabs>
+    <ngb-tab title="List">
+      <ng-template ngbTabContent>
+        <employee-list></employee-list>
+        <employee-detail></employee-detail>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Add">
+      <ng-template ngbTabContent>
+        <employee-add-employee></employee-add-employee>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Update">
+      <ng-template ngbTabContent>
+        <employee-update-employee #updateEmployee></employee-update-employee>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
+
+<router-outlet></router-outlet>

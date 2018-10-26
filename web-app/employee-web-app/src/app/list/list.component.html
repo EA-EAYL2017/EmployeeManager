@@ -1,0 +1,8 @@
+<div class="list">
+  <h2>Employees</h2>
+  <input [(ngModel)]='filterText' placeholder="Filter by Name" class="form-control"/>
+  <input [(ngModel)]='departmentFilterText' placeholder="Filter by Department" class="form-control"/>
+  <ul>
+    <li *ngFor="let employee of data.employees|nameFilter:filterText|departmentFilter:departmentFilterText" (click)="onSelect(employee)">{{employee.name}}</li>
+  </ul>
+</div>

@@ -1,0 +1,27 @@
+<form (ngSubmit)="updateEmployee(updateForm)" #updateForm="ngForm" class="form-group">
+  <fieldset>
+    <legend>Edit Employee</legend>
+    <div><input name="id" [(ngModel)]="employee.id" id="id" class="form-control" placeholder="ID" required></div>
+    <div *ngIf="updateForm.hasError('required', 'id')">Employee ID is required</div>
+    <div><input name="name" [(ngModel)]="employee.name" id="name"  class="form-control" placeholder="Name" required></div>
+    <div *ngIf="updateForm.hasError('required', 'name')">Employee name is required</div>
+    <div><input name="address" [(ngModel)]="employee.address" id="address" class="form-control" placeholder="Address" required></div>
+    <div *ngIf="updateForm.hasError('required', 'address')">Address is required</div>
+    <div><input name="national_insurance" [(ngModel)]="employee.national_insurance" id="national_insurance" class="form-control" placeholder="National Insurance" required></div>
+    <div *ngIf="updateForm.hasError('required', 'national_insurance')">NI Number is required</div>
+    <div><input name="bic_iban" [(ngModel)]="employee.bic_iban" id="bic_iban" class="form-control" placeholder="IBAN" required></div>
+    <div *ngIf="updateForm.hasError('required', 'bic_iban')">IBAN Number is required</div>
+    <div><input name="salary" [(ngModel)]="employee.salary" id="salary" class="form-control" type="number" placeholder="Salary" required></div>
+    <div *ngIf="updateForm.hasError('required', 'salary')">Salary is required</div>
+    <div>
+        <select [(ngModel)]="employee.department" name="department" class="form-control">
+          <option value="Applied Innovation">Applied Innovation</option>
+          <option value="Evolve">Evolve</option>
+          <option value="Digital Services">Digital Services</option>
+          <option value="Smart">Smart</option>
+        </select>
+    </div>
+    <div *ngIf="updateForm.hasError('required', 'department')">Department name is required</div> 
+    <input type="Submit" [disabled]="!updateForm.valid" class="btn btn-primary">
+  </fieldset>
+</form>
