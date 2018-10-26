@@ -7,7 +7,7 @@
     <div><input class="form-control" [(ngModel)]="newEmployee.bic_iban" name="bic_iban" placeholder="IBAN" required></div>
     <div><input class="form-control" [(ngModel)]="newEmployee.salary" type="number" name="salary" placeholder="Salary" required></div>
     <div><input class="form-control" [(ngModel)]="newEmployee.department" name="department" placeholder="Department" required></div>
-    <button class="btn btn-primary" type="Submit" [disabled]="!addForm.valid"></button>
+    <input class="btn btn-primary" type="Submit" [disabled]="!addForm.valid">
   </fieldset>
 </form>
 
