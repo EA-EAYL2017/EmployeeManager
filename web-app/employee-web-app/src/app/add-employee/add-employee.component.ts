@@ -7,9 +7,9 @@ import { DataService } from '../data.service';
   templateUrl: './add-employee.component.html',
   styleUrls: ['./add-employee.component.css']
 })
-export class AddCityComponent implements OnInit {
+export class AddEmployeeComponent implements OnInit {
 
-  public newCity: City;
+  public newEmployee: Employee;
   data: DataService;
 
   constructor(dataService: DataService) {
@@ -17,13 +17,13 @@ export class AddCityComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.newCity = new City();
+    this.newEmployee = new Employee();
   }
 
   addEmployee(addForm): void {
     if(addForm.valid) {
-      var cityToAdd = this.newCity;
-      this.newCity = new City();
+      var employeeToAdd = this.newEmployee;
+      this.newEmployee = new Employee();
       this.data.addEmployee(employeeToAdd);
     } else {
       console.error("Add Employee form is in an invalid state");
