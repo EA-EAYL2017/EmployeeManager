@@ -3,17 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "employee-web-app": {
+    "city-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "city",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/employee-web-app",
+            "outputPath": "dist/city-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,20 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "employee-web-app:build"
+            "port": 8001,
+            "host": "127.0.0.1",
+            "browserTarget": "city-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "employee-web-app:build:production"
+              "browserTarget": "city-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "employee-web-app:build"
+            "browserTarget": "city-app:build"
           }
         },
         "test": {
@@ -102,7 +104,7 @@
         }
       }
     },
-    "employee-web-app-e2e": {
+    "city-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "employee-web-app:serve"
+            "devServerTarget": "city-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "employee-web-app:serve:production"
+              "devServerTarget": "city-app:serve:production"
             }
           }
         },
@@ -131,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "employee-web-app"
+  "defaultProject": "city-app"
 }
