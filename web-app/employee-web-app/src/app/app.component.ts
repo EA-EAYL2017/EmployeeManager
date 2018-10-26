@@ -11,7 +11,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "My Wonderful City Application";  
+  title = "My Wonderful Employee Application";  
   parentRouter: Router;
   update: UpdateEmployeeComponent;
 
