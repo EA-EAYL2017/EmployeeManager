@@ -10,6 +10,7 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { DepartmentFilterPipe } from './department-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     ListComponent,
     NameFilterPipe,
     AddEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    DepartmentFilterPipe
   ],
   imports: [
     BrowserModule,
