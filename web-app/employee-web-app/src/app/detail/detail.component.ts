@@ -8,7 +8,7 @@ import { NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'city-detail',
+  selector: 'employee-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
@@ -41,7 +41,7 @@ export class DetailComponent implements OnInit {
   }
 
   delete(oldEmployee: Employee): void{
-    this.dataService.deleteCity(oldEmployee);
+    this.dataService.deleteEmployee(oldEmployee);
     this.employee = null;
   }
 

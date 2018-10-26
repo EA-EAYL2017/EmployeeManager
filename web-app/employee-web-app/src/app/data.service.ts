@@ -12,15 +12,15 @@ export class DataService {
   employees = this.http.get<Employee[]>('/api/employees');
   
 
-  public addCity(newEmployee: Employee): void {
-    this.employees = this.http.post<Employee[]>('/api/addcity', newEmployee);
+  public addEmployee(newEmployee: Employee): void {
+    this.employees = this.http.post<Employee[]>('/api/addEmployee', newEmployee);
   }
 
-  public deleteCity(oldEmployee: Employee): void {
-    this.employees = this.http.delete<Employee[]>('/api/deleteCity/'+ oldEmployee.employeeNo);
+  public deleteEmployee(oldEmployee: Employee): void {
+    this.employees = this.http.delete<Employee[]>('/api/deleteEmployee/'+ oldEmployee.employeeNo);
   }
 
-  public updateCity(employeeToUpdate: Employee): void {
-    this.employees = this.http.put<Employee[]>('/api/updateCity/' + employeeToUpdate.employeeNo, employeeToUpdate);
+  public updateEmployee(employeeToUpdate: Employee): void {
+    this.employees = this.http.put<Employee[]>('/api/updateEmployee/' + employeeToUpdate.employeeNo, employeeToUpdate);
   }
 }

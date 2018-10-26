@@ -40,7 +40,7 @@ export class UpdateEmployeeComponent implements OnInit {
 
   updateCity(addForm): void {
     if(addForm.valid) {
-      var cityToUpdate = this.newEmployee;
+      var employeeToUpdate = this.newEmployee;
       this.newEmployee = new Employee();
       this.data.updateEmployee(employeeToUpdate);
     } else {
@@ -49,10 +49,5 @@ export class UpdateEmployeeComponent implements OnInit {
   }
 
   sendData(employee: Employee): void {
-    this.updateForm.get('id').setValue(city.id);
-    this.updateForm.get('name').setValue(city.name);
-    this.updateForm.get('countrycode').setValue(city.countrycode);
-    this.updateForm.get('district').setValue(city.district);
-    this.updateForm.get('population').setValue(city.population);
   }
 }

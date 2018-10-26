@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
 import { NameFilterPipe } from './name-filter.pipe';
-import { AddCityComponent } from './add-city/add-city.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateCityComponent } from './update-city/update-city.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,8 @@ import { UpdateCityComponent } from './update-city/update-city.component';
     DetailComponent,
     ListComponent,
     NameFilterPipe,
-    AddCityComponent,
-    UpdateCityComponent
+    AddEmployeeComponent,
+    UpdateEmployeeComponent
   ],
   imports: [
     BrowserModule,
