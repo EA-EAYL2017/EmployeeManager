@@ -1,20 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
 .list {
     text-align: left;
     float: left;
-    color: darkblue;
 }
 
 .detail {
-     text-align: left;
-     float: right;
-     color: maroon;
-}
-
-form input.ng-valid {
-    background: lightgreen;
+    text-align: left;
+    position: fixed;
+    right: 30px;
 }
 
 form input.ng-invalid {
     background: pink;
+}
+
+h1, h2, ul, legend {
+    padding-top: 15px;
+}
+
+li {
+    cursor: pointer;
 }

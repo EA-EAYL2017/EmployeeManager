@@ -6,11 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-
   constructor(private http: HttpClient) { }
 
   employees = this.http.get<Employee[]>('/api/employees');
-  
 
   public addEmployee(newEmployee: Employee): void {
     this.employees = this.http.post<Employee[]>('/api/employee', newEmployee);

@@ -1,6 +1,6 @@
 <div class="list">
   <h2>Employees</h2>
-  <input [(ngModel)]='filterText' placeholder="Filter"/>
+  <input [(ngModel)]='filterText' placeholder="Filter" class="form-control"/>
   <ul>
     <li *ngFor="let employee of data.employees|async|nameFilter:filterText" (click)="onSelect(employee)">{{employee.name}}</li>
   </ul>
