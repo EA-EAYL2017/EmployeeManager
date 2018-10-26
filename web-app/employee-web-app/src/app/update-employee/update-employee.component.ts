@@ -23,8 +23,9 @@ export class UpdateEmployeeComponent implements OnInit {
   public employee: Employee;
   public switchboard: SwitchboardService;
 
-  constructor(switchboard: SwitchboardService){
+  constructor(switchboard: SwitchboardService, data: DataService){
     this.switchboard = switchboard;
+    this.data = data;
   }
   
   ngOnInit() {
