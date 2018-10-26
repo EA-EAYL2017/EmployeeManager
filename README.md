@@ -16,6 +16,7 @@ cd db
 Export the DB connection parameters (application DB user and password) and start the Node application. It will run on http://localhost:8002.
 
 ```
+npm install
 export DB_USER=employee_manager
 export DB_PASS=password
 cd express
@@ -23,5 +24,9 @@ nodemon index.js
 ```
 
 ### Frontend (angular)
-Run `npm start` in `web-app/employee-web-app`.
+```
+cd web-app/employee-web-app
+npm install
+npm start
+```
 This will start the frontend on http://localhost:8001.
