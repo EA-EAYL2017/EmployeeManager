@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
   switchboard: SwitchboardService;
-  thisCity: City;
+  thisEmployee: Employee;
   data: DataService;
 
   constructor (dataService: DataService, switchboard: SwitchboardService){
@@ -20,9 +20,9 @@ export class ListComponent implements OnInit {
     this.switchboard = switchboard;
   }
 
-  onSelect(newCity: City): void{
-    this.thisCity = newCity;
-    this.switchboard.switchCity(this.thisCity);
+  onSelect(newEmployee: Employee): void{
+    this.thisEmployee = newEmployee;
+    this.switchboard.switchCity(this.thisEmployee);
   }
 
   
