@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { City } from './city';
+import { Employee } from './employee';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,21 +9,18 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  cities = this.http.get<City[]>('/api/cities');
+  employees = this.http.get<Employee[]>('/api/employees');
   
 
-  public addCity(newCity: City): void {
-    this.cities = this.http.post<City[]>('/api/addcity', newCity);
-    console.log(this.cities);
+  public addEmployee(newEmployee: Employee): void {
+    this.employees = this.http.post<Employee[]>('/api/employee', newEmployee);
   }
 
-  public deleteCity(oldCity: City): void {
-    this.cities = this.http.delete<City[]>('/api/deleteCity/'+ oldCity.id);
-    console.log(this.cities);
+  public deleteEmployee(oldEmployee: Employee): void {
+    this.employees = this.http.delete<Employee[]>('/api/employee/'+ oldEmployee.employeeNo);
   }
 
-  public updateCity(cityToUpdate: City): void {
-    this.cities = this.http.put<City[]>('/api/updateCity/' + cityToUpdate.id, cityToUpdate);
-    console.log(this.cities);
+  public updateEmployee(employeeToUpdate: Employee): void {
+    this.employees = this.http.put<Employee[]>('/api/employee/' + employeeToUpdate.employeeNo, employeeToUpdate);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
-import { City } from '../city';
+import { Employee } from '../employee';
 import { DataService } from '../data.service';
 import { FormGroup, FormBuilder, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
 import { SwitchboardService } from '../switchboard.service';
@@ -13,16 +13,16 @@ import { BrowserModule } from '@angular/platform-browser';
   ]
 })
 @Component({
-  selector: 'city-update-city',
-  templateUrl: './update-city.component.html',
-  styleUrls: ['./update-city.component.css'],
+  selector: 'employee-update-employee',
+  templateUrl: './update-employee.component.html',
+  styleUrls: ['./update-employee.component.css'],
 })
-export class UpdateCityComponent implements OnInit {
+export class UpdateEmployeeComponent implements OnInit {
 
   data: DataService;
-  public newCity: City;
+  public newEmployee: Employee;
   public switchboardService;
-  cityDetails: City;
+  employeeDetails: Employee;
 
   constructor(private fb: FormBuilder){}
 
@@ -35,24 +35,19 @@ export class UpdateCityComponent implements OnInit {
   });
   
   ngOnInit() {
-    this.newCity = new City();
+    this.newEmployee = new Employee();
   }
 
   updateCity(addForm): void {
     if(addForm.valid) {
-      var cityToUpdate = this.newCity;
-      this.newCity = new City();
-      this.data.updateCity(cityToUpdate);
+      var employeeToUpdate = this.newEmployee;
+      this.newEmployee = new Employee();
+      this.data.updateEmployee(employeeToUpdate);
     } else {
-      console.error("Update City form is in an invalid state");
+      console.error("Update Employee form is in an invalid state");
     }
   }
 
-  sendData(city: City): void {
-    this.updateForm.get('id').setValue(city.id);
-    this.updateForm.get('name').setValue(city.name);
-    this.updateForm.get('countrycode').setValue(city.countrycode);
-    this.updateForm.get('district').setValue(city.district);
-    this.updateForm.get('population').setValue(city.population);
+  sendData(employee: Employee): void {
   }
 }

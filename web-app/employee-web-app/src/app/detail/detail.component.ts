@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild } from '@angular/core';
-import { City } from '../city';
+import { Employee } from '../employee';
 import { SwitchboardService } from '../switchboard.service';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
@@ -8,13 +8,13 @@ import { NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'city-detail',
+  selector: 'employee-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
 
-  @Input() city: City;
+  @Input() employee: Employee;
   switchboard: SwitchboardService;
   dataService: DataService;
   parentRouter: Router;
@@ -29,24 +29,24 @@ export class DetailComponent implements OnInit {
     
   }
 
-  subCity: Subscription;
+  subEmployee: Subscription;
   ngOnInit(): void {
-    this.subCity = this.switchboard.city$.subscribe((c) => {
-      this.city = c;
+    this.subEmployee = this.switchboard.employee$.subscribe((c) => {
+      this.employee = c;
     });
   }
 
   ngOnDestroy(): void {
-    this.subCity.unsubscribe();
+    this.subEmployee.unsubscribe();
   }
 
-  delete(oldCity: City): void{
-    this.dataService.deleteCity(oldCity);
-    this.city = null;
+  delete(oldEmployee: Employee): void{
+    this.dataService.deleteEmployee(oldEmployee);
+    this.employee = null;
   }
 
-  openForm(city: City): void{
-    this.app.openForm(city);
+  openForm(employee: Employee): void{
+    this.app.openForm(employee);
   }
 
 }
