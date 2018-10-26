@@ -7,7 +7,14 @@
     <div><input formControlName="national_insurance" ngmodel="employee.national_insurance" id="national_insurance" *ngIf="updateForm.get('national_insurance').errors['required']" class="form-control" name="national_insurance" placeholder="National Insurance" required></div>
     <div><input formControlName="bic_iban" ngmodel="employee.bic_iban" id="bic_iban" *ngIf="updateForm.get('bic_iban').errors['required']" class="form-control" name="bic_iban" placeholder="IBAN" required></div>
     <div><input formControlName="salary" ngmodel="employee.salary" id="salary" *ngIf="updateForm.get('salary').errors['required']" class="form-control" type="number" name="salary" placeholder="Salary" required></div>
-    <div><input formControlName="department" ngmodel="employee.department" id="department" *ngIf="updateForm.get('department').errors['required']" class="form-control"type="number" name="department" placeholder="Department" required></div>
+    <div>
+        <select [(ngModel)]="newEmployee.department" name="department" class="form-control">
+          <option value="Applied Innovation">Applied Innovation</option>
+          <option value="Evolve">Evolve</option>
+          <option value="Digital Services">Digital Services</option>
+          <option value="Smart">Smart</option>
+        </select>
+    </div>
     <input type="Submit" [disabled]="!addForm.valid">
   </fieldset>
 </form>
