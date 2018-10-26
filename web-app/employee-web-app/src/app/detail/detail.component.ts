@@ -31,7 +31,7 @@ export class DetailComponent implements OnInit {
 
   subEmployee: Subscription;
   ngOnInit(): void {
-    this.subEmployee = this.switchboard.city$.subscribe((c) => {
+    this.subEmployee = this.switchboard.employee$.subscribe((c) => {
       this.employee = c;
     });
   }
