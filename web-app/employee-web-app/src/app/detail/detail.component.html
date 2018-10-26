@@ -1,0 +1,11 @@
+<div class="detail" *ngIf="city">
+  <fieldset>
+    <legend>{{city.name}}</legend>
+    ID : {{city.id}}<br />
+    Country code: {{city.countrycode}}<br/>
+    District: {{city.district}}<br/>
+    Population: {{city.population}}<br />
+    <button type="button" class="btn btn-primary" (click)="openForm(city)">Update</button>
+    <button type="button" class="btn btn-danger" (click)="delete(city)">Delete</button>
+  </fieldset>
+</div>

@@ -1,0 +1,21 @@
+<form (ngSubmit)="updateCity(addForm)" [formGroup]="updateForm" class="form-group">
+  <fieldset>
+    <legend>Add City</legend>
+    <div><input formControlName="id" ngmodel="city.id" id="id" *ngIf="updateForm.get('id').errors['required']" class="form-control"type="number" name="ID" placeholder="ID" required></div>
+    <div><input formControlName="name" ngmodel="city.name" id="name" *ngIf="updateForm.get('name').errors['required']"  class="form-control" name="cityname" placeholder="Name" required></div>
+    <div><input formControNamel="countrycode" ngmodel="city.countrycode" id="countrycode" *ngIf="updateForm.get('countrycode').errors['required']" class="form-control" name="countrycode" placeholder="Country code" required pattern="^GBR$|^IRL$"></div>
+    <div><input formControlName="district" ngmodel="city.district" id="district" *ngIf="updateForm.get('district').errors['required']" class="form-control" name="district" placeholder="District" required></div>
+    <div><input formControlName="population" ngmodel="city.population" id="population" *ngIf="updateForm.get('population').errors['required']" class="form-control" type="number" name="population" placeholder="Population" required></div>
+    <input type="Submit" [disabled]="!addForm.valid">
+  </fieldset>
+</form>
+
+<div *ngIf="addForm.hasError('required', 'id')">ID is required</div>
+
+<div *ngIf="addForm.hasError('required', 'cityname')">City name is required</div>
+
+<div *ngIf="addForm.hasError('required', 'countrycode')">Country code is required</div>
+
+<div *ngIf="addForm.hasError('required', 'district')">District is required</div>
+
+<div *ngIf="addForm.hasError('required', 'population')">Population is required</div>
