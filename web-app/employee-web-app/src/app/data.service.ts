@@ -7,11 +7,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
   constructor(private http: HttpClient) { }
+  employees;
 
-  employees = this.http.get<Employee[]>('/api/employees');
+  public getEmployees(): void{
+    this.http.get<Employee[]>('/api/employees')
+    .subscribe(data => {
+      this.employees = data;
+    })
+  }
 
   public addEmployee(newEmployee: Employee): void {
-    this.employees = this.http.post<Employee[]>('/api/employee', newEmployee);
+    console.log(newEmployee);
+    this.http.post<Employee[]>('/api/employee', newEmployee)
+    .subscribe(data => {
+      this.employees = data;
+    });
   }
 
   public deleteEmployee(oldEmployee: Employee): void {
