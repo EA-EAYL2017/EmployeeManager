@@ -9,6 +9,7 @@ import { SwitchboardService } from '../switchboard.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+
   ngOnInit() {
   }
   switchboard: SwitchboardService;
@@ -18,6 +19,8 @@ export class ListComponent implements OnInit {
   constructor (dataService: DataService, switchboard: SwitchboardService){
     this.data = dataService;
     this.switchboard = switchboard;
+    this.data.getEmployees();
+    console.log(this.data.employees);
   }
 
   onSelect(newEmployee: Employee): void{

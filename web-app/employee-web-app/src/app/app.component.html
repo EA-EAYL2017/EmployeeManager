@@ -6,18 +6,18 @@
 </div>
 <div class="container">
   <ngb-tabset #tabs>
-    <ngb-tab title="List">
+    <ngb-tab title="List" type="button">
       <ng-template ngbTabContent>
         <employee-list></employee-list>
         <employee-detail></employee-detail>
       </ng-template>
     </ngb-tab>
-    <ngb-tab title="Add">
+    <ngb-tab title="Add" type="button">
       <ng-template ngbTabContent>
         <employee-add-employee></employee-add-employee>
       </ng-template>
     </ngb-tab>
-    <ngb-tab title="Update">
+    <ngb-tab title="Update" type="button">
       <ng-template ngbTabContent>
         <employee-update-employee id="update"></employee-update-employee>
       </ng-template>
