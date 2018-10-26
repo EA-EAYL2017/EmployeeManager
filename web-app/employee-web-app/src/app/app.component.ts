@@ -2,20 +2,20 @@ import { Component, ViewChild } from '@angular/core';
 import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 import { Employee } from './employee';
 import { Router } from '@angular/router';
-import { UpdateCityComponent } from './update-employee/update-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @Component({
-  selector: 'city-root',
-  providers: [UpdateCityComponent],
+  selector: 'employee-root',
+  providers: [UpdateEmployeeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = "My Wonderful City Application";  
   parentRouter: Router;
-  update: UpdateCityComponent;
+  update: UpdateEmployeeComponent;
 
-  constructor(parentRouter: Router, update: UpdateCityComponent){
+  constructor(parentRouter: Router, update: UpdateEmployeeComponent){
     this.parentRouter = parentRouter;
     this.update = update;
   }
@@ -23,10 +23,10 @@ export class AppComponent {
   @ViewChild('tabs')
   private tabs:NgbTabset;
 
-  openForm(city: City): void{
+  openForm(employee: Employee): void{
     console.log(this.tabs);
     this.tabs.select("ngb-tab-2");
-    this.update.sendData(city);
+    this.update.sendData(employee);
   }
 }
 
