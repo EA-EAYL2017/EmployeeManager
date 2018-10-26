@@ -7,12 +7,12 @@ import { Employee } from './employee';
 })
 export class SwitchboardService {
 
-  private cityWatcher = new Subject<City>();
-  public city$ = this.cityWatcher.asObservable();
+  private employeeWatcher = new Subject<Employee>();
+  public employee$ = this.employeeWatcher.asObservable();
 
-  public switchCity(city: City) {
-    if (city) {
-      this.cityWatcher.next(city); 
+  public switchEmployee(employee: Employee) {
+    if (employee) {
+      this.employeeWatcher.next(employee); 
     }
   }
 
