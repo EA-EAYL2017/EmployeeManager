@@ -1,8 +1,9 @@
 export class Employee {
+    id: number;
     name: string;
     address: string;
-    niNumber: string;
-    IBAN: string;
+    national_insurance: string;
+    bic_iban: string;
     salary: number;
-    employeeNo: number;
+    department: string;
 }
