@@ -14,7 +14,7 @@
     <div><input name="salary" [(ngModel)]="employee.salary" id="salary" class="form-control" type="number" placeholder="Salary" required></div>
     <div *ngIf="updateForm.hasError('required', 'salary')">Salary is required</div>
     <div>
-        <select [(ngModel)]="newEmployee.department" name="department" class="form-control">
+        <select [(ngModel)]="employee.department" name="department" class="form-control">
           <option value="Applied Innovation">Applied Innovation</option>
           <option value="Evolve">Evolve</option>
           <option value="Digital Services">Digital Services</option>
