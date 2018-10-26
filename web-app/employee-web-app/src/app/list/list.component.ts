@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { City } from '../city';
+import { Employee } from '../employee';
 import { DataService } from '../data.service';
 import { SwitchboardService } from '../switchboard.service';
 

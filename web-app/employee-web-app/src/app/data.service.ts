@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { City } from './city';
+import { Employee } from './employee';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

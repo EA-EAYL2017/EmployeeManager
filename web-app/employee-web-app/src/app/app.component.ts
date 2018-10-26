@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
-import { City } from './city';
+import { Employee } from './employee';
 import { Router } from '@angular/router';
-import { UpdateCityComponent } from './update-city/update-city.component';
+import { UpdateCityComponent } from './update-employee/update-employee.component';
 
 @Component({
   selector: 'city-root',

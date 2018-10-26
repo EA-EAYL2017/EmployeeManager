@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild } from '@angular/core';
-import { City } from '../city';
+import { Employee } from '../employee';
 import { SwitchboardService } from '../switchboard.service';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { City } from '../city';
+import { Employee } from '../employee';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'city-add-city',
-  templateUrl: './add-city.component.html',
-  styleUrls: ['./add-city.component.css']
+  selector: 'employee-add-employee',
+  templateUrl: './add-employee.component.html',
+  styleUrls: ['./add-employee.component.css']
 })
 export class AddCityComponent implements OnInit {
 
@@ -20,13 +20,13 @@ export class AddCityComponent implements OnInit {
     this.newCity = new City();
   }
 
-  addCity(addForm): void {
+  addEmployee(addForm): void {
     if(addForm.valid) {
       var cityToAdd = this.newCity;
       this.newCity = new City();
-      this.data.addCity(cityToAdd);
+      this.data.addEmployee(employeeToAdd);
     } else {
-      console.error("Add City form is in an invalid state");
+      console.error("Add Employee form is in an invalid state");
     }
   }
 }
