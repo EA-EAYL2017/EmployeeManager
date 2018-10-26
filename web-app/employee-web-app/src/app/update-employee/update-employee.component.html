@@ -13,8 +13,15 @@
     <div *ngIf="updateForm.hasError('required', 'bic_iban')">IBAN Number is required</div>
     <div><input name="salary" [(ngModel)]="employee.salary" id="salary" class="form-control" type="number" placeholder="Salary" required></div>
     <div *ngIf="updateForm.hasError('required', 'salary')">Salary is required</div>
-    <div><input name="department" [(ngModel)]="employee.department" id="department" class="form-control" placeholder="Department" required></div>
-    <div *ngIf="updateForm.hasError('required', 'department')">Department name is required</div>
+    <div>
+        <select [(ngModel)]="employee.department" name="department" class="form-control">
+          <option value="Applied Innovation">Applied Innovation</option>
+          <option value="Evolve">Evolve</option>
+          <option value="Digital Services">Digital Services</option>
+          <option value="Smart">Smart</option>
+        </select>
+    </div>
+    <div *ngIf="updateForm.hasError('required', 'department')">Department name is required</div> 
     <input type="Submit" [disabled]="!updateForm.valid" class="btn btn-primary">
   </fieldset>
 </form>
