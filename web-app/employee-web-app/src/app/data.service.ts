@@ -17,10 +17,10 @@ export class DataService {
   }
 
   public deleteEmployee(oldEmployee: Employee): void {
-    this.employees = this.http.delete<Employee[]>('/api/employee/'+ oldEmployee.employeeNo);
+    this.employees = this.http.delete<Employee[]>('/api/employee/'+ oldEmployee.id);
   }
 
   public updateEmployee(employeeToUpdate: Employee): void {
-    this.employees = this.http.put<Employee[]>('/api/employee/' + employeeToUpdate.employeeNo, employeeToUpdate);
+    this.employees = this.http.put<Employee[]>('/api/employee/' + employeeToUpdate.id, employeeToUpdate);
   }
 }

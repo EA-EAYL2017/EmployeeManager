@@ -2,10 +2,10 @@
   <fieldset>
     <legend>{{employee.name}}</legend>
     Address : {{employee.address}}<br />
-    National Insurance Number: {{employee.niNumber}}<br/>
-    IBAN Number: {{employee.IBAN}}<br/>
+    National Insurance Number: {{employee.national_insurance}}<br/>
+    IBAN Number: {{employee.bic_iban}}<br/>
     Salary: ${{employee.salary}}<br />
-    Employee Number: {{employee.employeeNo}}<br />
+    Employee Number: {{employee.id}}<br />
     <button type="button" class="btn btn-primary" (click)="openForm(employee)">Update</button>
     <button type="button" class="btn btn-danger" (click)="delete(employee)">Delete</button>
   </fieldset>
