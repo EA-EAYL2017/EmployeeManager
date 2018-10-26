@@ -6,27 +6,25 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 
 @Component({
   selector: 'employee-root',
-  providers: [UpdateEmployeeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = "My Wonderful Employee Application";  
   parentRouter: Router;
-  update: UpdateEmployeeComponent;
-
-  constructor(parentRouter: Router, update: UpdateEmployeeComponent){
+  constructor(parentRouter: Router){
     this.parentRouter = parentRouter;
-    this.update = update;
   }
 
   @ViewChild('tabs')
   private tabs:NgbTabset;
 
-  openForm(employee: Employee): void{
+  @ViewChild(UpdateEmployeeComponent)
+  updateEmployee:UpdateEmployeeComponent;
+
+  openForm(): void{
     console.log(this.tabs);
     this.tabs.select("ngb-tab-2");
-    this.update.sendData(employee);
   }
 }
 
