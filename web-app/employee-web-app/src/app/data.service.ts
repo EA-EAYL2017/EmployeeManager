@@ -13,14 +13,14 @@ export class DataService {
   
 
   public addEmployee(newEmployee: Employee): void {
-    this.employees = this.http.post<Employee[]>('/api/addEmployee', newEmployee);
+    this.employees = this.http.post<Employee[]>('/api/employee', newEmployee);
   }
 
   public deleteEmployee(oldEmployee: Employee): void {
-    this.employees = this.http.delete<Employee[]>('/api/deleteEmployee/'+ oldEmployee.employeeNo);
+    this.employees = this.http.delete<Employee[]>('/api/employee/'+ oldEmployee.employeeNo);
   }
 
   public updateEmployee(employeeToUpdate: Employee): void {
-    this.employees = this.http.put<Employee[]>('/api/updateEmployee/' + employeeToUpdate.employeeNo, employeeToUpdate);
+    this.employees = this.http.put<Employee[]>('/api/employee/' + employeeToUpdate.employeeNo, employeeToUpdate);
   }
 }
