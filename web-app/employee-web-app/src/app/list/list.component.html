@@ -2,6 +2,6 @@
   <h2>Employees</h2>
   <input [(ngModel)]='filterText' placeholder="Filter"/>
   <ul>
-    <li *ngFor="let employee of data.employees|async|nameFilter:filterText" (click)="onSelect(employee)">{{employee.name}}</li>
+    <li *ngFor="let employee of data.employees|nameFilter:filterText" (click)="onSelect(employee)">{{employee.name}}</li>
   </ul>
 </div>
