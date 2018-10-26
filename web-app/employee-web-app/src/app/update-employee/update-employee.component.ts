@@ -20,31 +20,26 @@ import { BrowserModule } from '@angular/platform-browser';
 export class UpdateEmployeeComponent implements OnInit {
 
   data: DataService;
-  public newEmployee: Employee;
-  public switchboardService;
-  employeeDetails: Employee;
+  public employee: Employee;
+  public switchboard: SwitchboardService;
 
-  constructor(private fb: FormBuilder){}
-
-  @Input() updateForm: FormGroup = this.fb.group({
-    id: new FormControl(),
-    name: new FormControl(),
-    countrycode: new FormControl(),
-    district: new FormControl(),
-    population: new FormControl()
-  });
+  constructor(switchboard: SwitchboardService){
+    this.switchboard = switchboard;
+  }
   
   ngOnInit() {
-    this.newEmployee = new Employee();
+    console.log(this.employee);
+    this.employee = this.switchboard.currentEmployee || new Employee();
+    console.log(this.employee);
   }
 
-  updateCity(addForm): void {
-    if(addForm.valid) {
-      var employeeToUpdate = this.newEmployee;
-      this.newEmployee = new Employee();
+  updateEmployee(updateForm): void {
+    if(updateForm.valid) {
+      var employeeToUpdate = this.employee;
+      this.employee = new Employee();
       this.data.updateEmployee(employeeToUpdate);
     } else {
-      console.error("Update Employee form is in an invalid state");
+      console.error("Edit Employee form is in an invalid state");
     }
   }
 

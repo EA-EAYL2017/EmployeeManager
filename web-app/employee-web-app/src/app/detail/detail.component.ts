@@ -17,16 +17,13 @@ export class DetailComponent implements OnInit {
   @Input() employee: Employee;
   switchboard: SwitchboardService;
   dataService: DataService;
-  parentRouter: Router;
   app: AppComponent;
   
 
-  constructor(switchboard: SwitchboardService, dataService: DataService, parentRouter: Router, app: AppComponent) {
+  constructor(switchboard: SwitchboardService, dataService: DataService, app: AppComponent) {
     this.switchboard = switchboard;
     this.dataService = dataService;
-    this.parentRouter = parentRouter;
     this.app = app;
-    
   }
 
   subEmployee: Subscription;
@@ -45,8 +42,7 @@ export class DetailComponent implements OnInit {
     this.employee = null;
   }
 
-  openForm(employee: Employee): void{
-    this.app.openForm(employee);
+  openForm(): void{
+    this.app.openForm();
   }
-
 }
