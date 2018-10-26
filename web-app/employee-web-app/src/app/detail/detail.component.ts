@@ -14,7 +14,7 @@ import { AppComponent } from '../app.component';
 })
 export class DetailComponent implements OnInit {
 
-  @Input() city: City;
+  @Input() employee: Employee;
   switchboard: SwitchboardService;
   dataService: DataService;
   parentRouter: Router;
@@ -29,24 +29,24 @@ export class DetailComponent implements OnInit {
     
   }
 
-  subCity: Subscription;
+  subEmployee: Subscription;
   ngOnInit(): void {
-    this.subCity = this.switchboard.city$.subscribe((c) => {
-      this.city = c;
+    this.subEmployee = this.switchboard.city$.subscribe((c) => {
+      this.employee = c;
     });
   }
 
   ngOnDestroy(): void {
-    this.subCity.unsubscribe();
+    this.subEmployee.unsubscribe();
   }
 
-  delete(oldCity: City): void{
-    this.dataService.deleteCity(oldCity);
-    this.city = null;
+  delete(oldEmployee: Employee): void{
+    this.dataService.deleteCity(oldEmployee);
+    this.employee = null;
   }
 
-  openForm(city: City): void{
-    this.app.openForm(city);
+  openForm(employee: Employee): void{
+    this.app.openForm(employee);
   }
 
 }
